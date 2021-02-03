@@ -27,6 +27,10 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1>Products CRUD</h1>
 
+    <div>
+        <a href="create.php" class="btn btn-success">Create Product</a>
+    </div>
+
     <table class="table">
         <thead>
             <tr>
