@@ -20,7 +20,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./style.css">
     <title>Products CRUD</title>
 </head>
 
@@ -46,13 +46,18 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($products as $i => $product) : ?>
                 <tr>
                     <th scope="row"><?php echo $i + 1 ?></th>
-                    <td></td>
+                    <td>
+                        <img src="<?php echo $product['image'] ?>" class="thumb-image" />
+                    </td>
                     <td><?php echo $product['title'] ?></td>
                     <td><?php echo $product['price'] ?></td>
                     <td><?php echo $product['create_date'] ?></td>
                     <td>
                         <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
-                        <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                        <form style="display: inline-block;" method="POST" action="delete.php">
+                            <input type="hidden" name="id" value="<?php echo $product['id'] ?>" />
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
