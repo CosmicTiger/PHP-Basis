@@ -1,0 +1,17 @@
+{
+    "name": "phantomjoker/15_autoloading",
+    "authors": [
+        {
+            "name": "CosmicTiger",
+            "email": "luisangelmarcia@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "./app"
+        }
+    }
+}
