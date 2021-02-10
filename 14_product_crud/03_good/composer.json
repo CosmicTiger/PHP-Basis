@@ -1,0 +1,15 @@
+{
+    "name": "phantomjoker/03_good",
+    "authors": [
+        {
+            "name": "CosmicTiger",
+            "email": "luisangelmarcia@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    }
+}
